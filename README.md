@@ -41,8 +41,29 @@ final_project_notebooks_dir/
 ├── models/         # 6 files - R-GCN, baselines, checkpoint
 ├── results/        # 4 files - Metrics, ablations, comparisons
 ├── business/       # 5 files - Recommendations, simulation
+├── dashboard/      # Streamlit interactive dashboard
 └── notebooks/      # Presentation notebook
 ```
+
+---
+
+## Interactive Dashboard
+
+Run the Streamlit dashboard to explore recommendations interactively:
+
+```bash
+cd final_project_notebooks_dir
+streamlit run dashboard/app.py
+```
+
+Opens at http://localhost:8501
+
+**Dashboard Features:**
+- KPI summary cards (Total Value, Recommendations, Days-A/R, Risk %)
+- Interactive filters (Quarter, Risk Level, Category, Region)
+- Quarterly savings bar chart
+- Risk distribution pie chart (Green/Amber/Red traffic lights)
+- Expandable recommendation cards with "Why" explanations
 
 ---
 
