@@ -1,18 +1,20 @@
 """
-Train LightGBM Model for Vendor Adoption Prediction
+lightgbm_baseline.py -- LightGBM Model for Vendor Adoption Prediction
 
-Strategy: Manual hyperparameter tuning (start with defaults, adjust based on validation)
+Traditional ML baseline (Tier 2) using gradient boosting with handcrafted features.
+Uses 30 engineered features from site, vendor, and pair attributes.
 
 Hyperparameters:
-- num_leaves: 31 (tree complexity)
-- learning_rate: 0.05 (step size)
-- scale_pos_weight: 5 (class imbalance - dev set has ~17% positives)
-- feature_fraction: 0.8 (regularization)
-- bagging_fraction: 0.8 (regularization)
+    - num_leaves: 31
+    - learning_rate: 0.05
+    - scale_pos_weight: auto (class imbalance)
+    - feature_fraction: 0.8
+    - bagging_fraction: 0.8
 
-Output:
-- Trained LightGBM model
-- Predictions on dev set
+Performance: PR-AUC ~0.937 (Tier 2 baseline)
+
+Author: Gregory E. Schwartz
+Last Revised: December 2025
 """
 
 import pandas as pd

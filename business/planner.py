@@ -1,22 +1,23 @@
 """
-Greedy Planner: Convert Model Predictions to Quarterly Action Plan
+planner.py -- Greedy Planner for Quarterly Vendor Consolidation
 
-PURPOSE:
-    Convert R-GCN link predictions + Risk Head outputs into a ranked,
-    staged quarterly plan for vendor consolidation.
+Converts R-GCN link predictions and Risk Head outputs into a ranked,
+staged quarterly plan for vendor consolidation.
 
-ALGORITHM:
-    1. Score each recommendation: benefit = p × price_delta + kpi_bonus
+Algorithm:
+    1. Score each recommendation: benefit = p * price_delta + kpi_bonus
     2. Adjust by risk: score = benefit - risk_penalty
     3. Rank recommendations by adjusted score
-    4. Stage by risk: low-risk → Q1, high-risk → Q3/Q4
+    4. Stage by risk: low-risk to Q1, high-risk to Q3/Q4
     5. Enforce constraints (EHR+Lab rule, vendor capacity)
-    6. Output quarterly assignments
 
-CONSTRAINTS:
-    1. EHR + Lab rule: Can't switch both EHR and Lab in same quarter
-    2. Vendor capacity: Max N sites per vendor per quarter
-    3. Site capacity: Max M switches per site per year
+Constraints:
+    - EHR + Lab rule: Cannot switch both in same quarter
+    - Vendor capacity: Max N sites per vendor per quarter
+    - Site capacity: Max M switches per site per year
+
+Author: Gregory E. Schwartz
+Last Revised: December 2025
 """
 
 import sys

@@ -1,5 +1,9 @@
-# Healthcare Vendor ML Models
-# Import key classes for notebook usage
+"""
+models/__init__.py -- Healthcare Vendor ML Models Package
+
+Author: Gregory E. Schwartz
+Last Revised: December 2025
+"""
 
 from .bipartite_gnn import BipartiteGNN
 from .build_hetero_graph import build_hetero_graph

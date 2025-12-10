@@ -1,22 +1,19 @@
 """
-Peer Count Scorer
+heuristic_baselines.py -- Peer Count Scorer for Site-Vendor Link Prediction
 
-A heuristic that scores site×vendor pairs based on peer adoption patterns.
-
-Key Insight: Sites tend to adopt vendors that similar sites (peers) have adopted.
+A heuristic baseline that scores site-vendor pairs based on peer adoption patterns.
+Sites tend to adopt vendors that similar sites (peers) have adopted.
 
 Peer Definition:
-- Sites with the same EHR system AND same region
+    Sites with the same EHR system AND same region
 
 Formula:
     score = peer_adoptions / (total_peers + 1)
 
-Where:
-- peer_adoptions: Number of peer sites that adopted this vendor in the last 12 months
-- total_peers: Total number of peer sites
-- +1 in denominator prevents division by zero
+Performance: PR-AUC ~0.171 (Tier 1 baseline)
 
-Expected Performance: PR-AUC ~0.40-0.50 (peer effects are strong signal)
+Author: Gregory E. Schwartz
+Last Revised: December 2025
 """
 
 import pandas as pd

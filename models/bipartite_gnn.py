@@ -1,5 +1,5 @@
 """
-Bipartite Graph Neural Network for Site-Vendor Link Prediction
+bipartite_gnn.py -- Bipartite Graph Neural Network for Site-Vendor Link Prediction
 
 Architecture:
     1. BipartiteGNNEncoder: 2-layer SAGEConv message passing
@@ -7,8 +7,11 @@ Architecture:
     3. BipartiteGNN: Full model combining encoder + decoder
 
 References:
-    - Hamilton et al. (2017): "Inductive Representation Learning on Large Graphs" (GraphSAGE)
-    - PyTorch Geometric SAGEConv: https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.conv.SAGEConv
+    - Hamilton et al. (2017): Inductive Representation Learning on Large Graphs
+    - PyTorch Geometric SAGEConv documentation
+
+Author: Gregory E. Schwartz
+Last Revised: December 2025
 """
 
 import torch

@@ -1,24 +1,23 @@
 """
-R-GCN for Temporal Link Prediction (OPTIMIZED - Paper Hyperparameters)
+train_rgcn.py -- R-GCN for Temporal Link Prediction
 
-KEY IMPROVEMENTS over SAGEConv:
-    - R-GCN uses integration_quality (0/1/2) as edge relation types
-    - Learns separate weight matrices for each quality level
-    - This is the "strong signal" mentioned in the deck (page 8)
+Relational Graph Convolutional Network with edge-type-specific learning.
+Uses integration_quality (0/1/2) as edge relation types to learn separate
+weight matrices for each quality level.
 
-OPTIMIZATIONS from R-GCN Paper (arXiv:1703.06103v4):
-    1. Edge dropout: 0.4 (denoising autoencoder effect)
-    2. Larger embeddings: 128→64 (was 64→32)
-    3. Higher learning rate: 0.01 (was 0.001)
-    4. Decoder L2 regularization: 0.01 (was 5e-4)
-
-Architecture (from deck page 17):
-    - HeteroConv with R-GCN for relation-aware message passing
+Architecture:
+    - FastRGCNConv for relation-aware message passing
     - Integration quality as edge types (0=none, 1=partial, 2=full_api)
-    - Bilinear/MLP decoder with edge features
+    - MLP decoder with edge features
 
-Baseline performance: 0.8343 PR-AUC
-Expected with optimizations: 0.87-0.90 PR-AUC (~90% toward GBM target of 0.937)
+Hyperparameters (from R-GCN paper arXiv:1703.06103v4):
+    - Edge dropout: 0.4
+    - Hidden channels: 128
+    - Output channels: 64
+    - Learning rate: 0.01
+
+Author: Gregory E. Schwartz
+Last Revised: December 2025
 """
 
 import sys

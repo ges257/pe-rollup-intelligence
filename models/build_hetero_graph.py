@@ -1,6 +1,11 @@
 """
-Bipartite Graph Construction for Site-Vendor Link Prediction
-Converts CSV data to PyTorch Geometric HeteroData format
+build_hetero_graph.py -- Bipartite Graph Construction for Site-Vendor Link Prediction
+
+Converts CSV data (sites, vendors, contracts) to PyTorch Geometric HeteroData format
+for use with Graph Neural Networks.
+
+Author: Gregory E. Schwartz
+Last Revised: December 2025
 """
 
 import pandas as pd
