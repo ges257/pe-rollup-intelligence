@@ -1,5 +1,5 @@
 """
-app.py -- PE Rollup Intelligence Platform | Synergy Capture Roadmap
+app.py -- PE Rollup Intelligence Platform | Synergy Intelligence Suite
 
 Three-tab dashboard for PE stakeholder decision-making:
     Tab 1: Synergy Capture Roadmap - Investment thesis & value creation
@@ -235,10 +235,10 @@ def get_category_standardization(pod_data, n_sites_in_pod):
 # ============================================================================
 
 st.title("📊 PE Rollup Intelligence Platform")
-st.markdown("### 🎯 Synergy Capture Roadmap")
+st.markdown("### 🦉 Synergy Intelligence Suite")
 
 # Create tabs
-tab1, tab2, tab3 = st.tabs(["📈 Value Creation Summary", "💰 Actionable Recommendations", "📅 Implementation Timeline"])
+tab1, tab2, tab3 = st.tabs(["🗺️ Value Creation Summary", "📡 Synergy Discovery Radar", "📈 Implementation Timeline"])
 
 # ============================================================================
 # TAB 1: PORTFOLIO OVERVIEW
@@ -398,8 +398,8 @@ with tab1:
 # TAB 2: SYNERGY CAPTURE PLAYBOOK (Pod-Orchestrated)
 # ============================================================================
 with tab2:
-    st.markdown("### Synergy Capture Playbook")
-    st.caption("Strategic pod-based vendor standardization opportunities")
+    st.markdown("### 📡 Synergy Discovery Radar")
+    st.caption("Identify high-value opportunities across your portfolio. Pod-based clustering shows you where to focus first.")
     st.markdown("---")
 
     # Filters - 4 columns now including Pod filter
