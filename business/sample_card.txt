@@ -1,0 +1,45 @@
+============================================================
+RECOMMENDATION CARD #1
+============================================================
+
+SITE: Practice S084 (S084)
+  Region: Northeast
+  EHR System: Curve
+
+VENDOR: Vendor V016 (V016)
+  Category: IT_MSP
+  Integration: Full API
+
+------------------------------------------------------------
+SCORES
+------------------------------------------------------------
+  Fit Score: 90/100 (Excellent Fit)
+  Confidence: Medium
+  Risk: Amber (Minimal impact on Days-A/R expected)
+
+------------------------------------------------------------
+FINANCIALS
+------------------------------------------------------------
+  Expected Annual Savings: $840
+  Adoption Probability: 91%
+  Expected Days-A/R Change: -0.2 days
+
+------------------------------------------------------------
+STAGING
+------------------------------------------------------------
+  Recommended Quarter: Q3
+  Priority: Low
+
+------------------------------------------------------------
+WHY THIS RECOMMENDATION?
+------------------------------------------------------------
+  1. [Integration] Vendor V016 has full API integration with Curve
+     Confidence: ★★★★☆ (95%)
+  2. [Risk Assessment] Expected Days-A/R change: -0.2 days (neutral impact)
+     Confidence: ★★★★☆ (85%)
+  3. [Readiness] Site has 64% of prerequisites for Vendor V016
+     Confidence: ★★★★☆ (80%)
+  4. [Industry Example] Site-090 successfully transitioned to Vendor V016 (reduced Days-A/R by 4 days)
+     Confidence: ★★★☆☆ (75%)
+
+============================================================

@@ -1,0 +1,44 @@
+======================================================================
+PORTFOLIO VENDOR CONSOLIDATION OVERVIEW
+======================================================================
+Generated: 2025-12-06 03:37
+
+----------------------------------------------------------------------
+EXECUTIVE SUMMARY
+----------------------------------------------------------------------
+  Total Sites: 100
+  Total Vendors: 20
+  Recommendations: 50
+
+----------------------------------------------------------------------
+QUARTERLY PLAN
+----------------------------------------------------------------------
+  Q1: 18 recommendations, $30,684 savings, 61 avg fit
+  Q2: 14 recommendations, $15,763 savings, 65 avg fit
+  Q3: 15 recommendations, $17,842 savings, 65 avg fit
+  Q4: 3 recommendations, $833 savings, 76 avg fit
+
+  TOTAL ANNUAL SAVINGS: $65,123
+
+----------------------------------------------------------------------
+RISK DISTRIBUTION
+----------------------------------------------------------------------
+  Green (Low Risk): 23 (46%)
+  Amber (Medium Risk): 20 (40%)
+  Red (High Risk): 7 (14%)
+
+----------------------------------------------------------------------
+TOP 5 RECOMMENDATIONS
+----------------------------------------------------------------------
+  1. Practice S057 → Vendor V017 (IT_MSP)
+     Fit: 98, Savings: $2,399, Q1
+  2. Practice S011 → Vendor V006 (RCM)
+     Fit: 95, Savings: $1,295, Q3
+  3. Practice S052 → Vendor V011 (Scheduling)
+     Fit: 94, Savings: $844, Q2
+  4. Practice S096 → Vendor V016 (IT_MSP)
+     Fit: 91, Savings: $1,589, Q4
+  5. Practice S084 → Vendor V016 (IT_MSP)
+     Fit: 90, Savings: $840, Q3
+
+======================================================================

@@ -1,0 +1,1707 @@
+{
+  "metadata": {
+    "extraction_date": "2025-11-20",
+    "batches_completed": 5,
+    "supplements_completed": 3,
+    "total_vendors": 20,
+    "valid_vendors": 20,
+    "invalid_vendors": 0,
+    "duplicates": 0,
+    "categories_covered": ["Lab", "RCM", "Telephony", "Scheduling", "Clearinghouse", "IT_MSP", "Supplies"],
+    "extraction_models": {
+      "batch_1": "Claude Opus 4.1",
+      "batch_2": "Claude Sonnet 4.5",
+      "batch_3": "ChatGPT Pro",
+      "batch_4": "Claude Opus 4.1",
+      "batch_5": "Claude Sonnet 4.5",
+      "supplement_v004": "ChatGPT Pro (web.run)",
+      "supplement_v005": "Claude Sonnet 4.5 + ChatGPT Pro (dual run)",
+      "supplement_v006": "ChatGPT Pro (web.run)"
+    },
+    "notes": "Original V004 (NDX) was duplicate of V001 (National Dentex). Replaced with ROE Dental Laboratory (premium surgical specialist). Original V005 (Apex Dental Billing) was non-existent. Replaced with Vyne Dental (RCM-first platform). Original V006 (EOS Healthcare) was non-existent. Replaced with iCoreConnect (platform + service RCM). V017 and V018 both identified as Pact-One Solutions (serves both premium and basic/mid-tier markets with different service tiers). 100% vendor coverage achieved 2025-11-20."
+  },
+  "vendors": {
+    "V001": {
+      "vendor_name": "National Dentex (National Dental Labs)",
+      "category": "Lab",
+      "tier": 1,
+      "founded": null,
+      "ownership": "PE-backed (National Dentex Corporation)",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Doctor portal, STL file upload, manual Rx forms",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based file submission",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based workflow",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "crown_and_bridge",
+        "digital_workflow",
+        "3shape_integration",
+        "intraoral_scanner_support",
+        "portal_based_ordering",
+        "multi_location_dso_support"
+      ],
+      "peer_adoption": {
+        "customer_count": "50000_plus",
+        "scale": "national",
+        "dso_partnerships": [],
+        "market_position": "largest_network"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "customer_count": "50,000+ customers",
+        "scale": "largest dental lab network",
+        "confidence": "high"
+      }
+    },
+    "V002": {
+      "vendor_name": "Glidewell",
+      "category": "Lab",
+      "tier": 1,
+      "founded": null,
+      "ownership": "family_owned",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "My Account portal, digital file submission",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based file submission",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based workflow",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "crown_and_bridge",
+        "digital_workflow",
+        "ai_technology_leader",
+        "high_volume_production",
+        "3shape_integration",
+        "intraoral_scanner_support",
+        "my_account_portal"
+      ],
+      "peer_adoption": {
+        "customer_count": "80000_plus_cases_per_year",
+        "dentist_count": "35000_plus",
+        "scale": "national",
+        "market_position": "ai_technology_leader"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "volume": "80,000+ cases per year processed",
+        "dentists_served": "35,000+ dentists",
+        "market_share": "~8% based on ADA dentist counts",
+        "confidence": "high"
+      }
+    },
+    "V003": {
+      "vendor_name": "DDS Lab",
+      "category": "Lab",
+      "tier": 2,
+      "founded": null,
+      "ownership": "private",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "My.DDSLab.com portal, mobile app",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based workflow",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "crown_and_bridge",
+        "digital_workflow",
+        "mobile_app",
+        "portal_my_ddslab",
+        "dso_exclusive_partnership"
+      ],
+      "peer_adoption": {
+        "customer_count": "national_network",
+        "scale": "national",
+        "dso_partnerships": ["Smile Brands (exclusive since 2005, 400+ locations)"],
+        "market_position": "dso_focused"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "smile_brands_partnership": "Exclusive partnership since 2005 (20 years)",
+        "smile_brands_locations": "400+ Smile Brands locations served",
+        "confidence": "high"
+      }
+    },
+    "V004": {
+      "vendor_name": "ROE Dental Laboratory",
+      "category": "Lab",
+      "tier": 1,
+      "founded": "1933 (continuous operation), current entity 1978",
+      "ownership": "Family-owned, private (not PE-backed)",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Web portal (roedental.rxupload.com) with case submission, STL/PLY file uploads, status tracking. Industry standard for labs - no API integration.",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based case submission with digital file upload, email/fax alternatives. No EHR API integration.",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal submission system, supports IOS scanner connections (CEREC Connect). Standard lab workflow without API.",
+          "confidence": "high"
+        },
+        "Curve_Dental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Portal-based submission system, digital file formats supported (STL, PLY, DICOM).",
+          "confidence": "medium"
+        },
+        "Denticon": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Web portal case submission, IOS scanner connections supported. No API integration documented.",
+          "confidence": "medium"
+        }
+      },
+      "key_features": [
+        "chrome_guidedsmile_patented_surgical_guide",
+        "full_arch_specialist_15000_plus_cases",
+        "damas_certified_elite_0_6_percent",
+        "20_plus_certified_dental_technicians",
+        "fda_registered_class_ii_device_manufacturer",
+        "grammetry_proprietary_photogrammetry",
+        "100_percent_usa_made",
+        "25_years_average_ceramist_experience",
+        "3d_printing_35_percent_of_products",
+        "slm_metal_printing_cobalt_chrome",
+        "extensive_ce_infrastructure",
+        "2_year_pfz_warranty"
+      ],
+      "peer_adoption": {
+        "customer_count": "not_publicly_disclosed",
+        "volume_indicators": {
+          "crown_bridge_units": "60,000 annually",
+          "dentures_decade": "200,000+ last decade",
+          "digital_dentures": "100,000+ total (90,000 since 2018)",
+          "full_arch_cases": "15,000+ over 5 years",
+          "chrome_arches": "25,000+ CHROME GuidedSMILE arches"
+        },
+        "market_position": "Largest privately held laboratory in United States (vs. PE-backed)",
+        "dso_partnerships": [],
+        "scale": "239 skilled team members",
+        "certifications": ["DAMAS (elite 0.6%)", "FDA registered", "NADL member", "CDL certified", "20+ CDTs"]
+      },
+      "notable_claims": {
+        "success_rate": "99% (1% remake rate)",
+        "customer_satisfaction": "99.7% average",
+        "digital_history": "Accepting digital impressions since 2004",
+        "confidence": "medium"
+      },
+      "geographic_coverage": "national_shipping_regional_facilities",
+      "locations": "4 facilities (Independence OH HQ, Chicago IL, Jamestown NY, Martin's Ferry OH)",
+      "specialization": "Full-arch/implant surgery specialist with proprietary CHROME GuidedSMILE technology",
+      "differentiation_from_v001_v003": {
+        "positioning": "Premium surgical specialist vs. volume generalists",
+        "technology": "Fully patented CHROME system (unique to market), Grammetry proprietary photogrammetry",
+        "service_model": "Technology meets artisan craftsmanship - hand-finished premium work",
+        "scale": "Boutique specialist (239 employees) vs. thousands at V001-V003",
+        "certifications": "Elite DAMAS 0.6% vs. standard commercial labs",
+        "market_segment": "High-end private practices seeking surgical expertise"
+      }
+    },
+    "V005": {
+      "vendor_name": "Vyne Dental",
+      "category": "RCM",
+      "tier": 1,
+      "founded": "~1990s (as NEA - National Electronic Attachment)",
+      "ownership": "PE-backed (The Jordan Company, acquired 2019)",
+      "ehr_integrations": {
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Integration agreement Oct 22, 2025, utilizes data via API from Denticon with bidirectional connectivity",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Utilizes Open Dental APIs as supported, active integration agreement June 24, 2025 with Vyne paying fees to support ongoing API development",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Vyne Sync utility syncs patient and appointment data to/from Eaglesoft to Vyne Trellis with bidirectional synchronization, active integration agreement with Patterson",
+          "confidence": "high"
+        },
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Uses print-based integration (PDF/e-fax style) NOT API. Henry Schein One explicitly states DDP does not provide data for claims submission. Active legal dispute (lawsuit Oct 3, 2025)",
+          "confidence": "high",
+          "critical_note": "Integration contested due to Henry Schein One blocking print-based method"
+        },
+        "Curve_Dental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Listed as Claims Processing partner with no API integration or bidirectional sync mention",
+          "confidence": "medium"
+        },
+        "Dentrix_Ascend": {
+          "integration_quality": 0,
+          "integration_type": "none",
+          "evidence": "Vyne Sync explicitly not supported for Ascend Cloud, not listed on Henry Schein One authorized vendor list",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "vyne_trellis_comprehensive_rcm_platform",
+        "eligibility_verification_90_95_percent_automated",
+        "claim_submission_96_percent_acceptance",
+        "claim_scrubbing_95_percent_automated",
+        "denial_management_60_70_percent_automated",
+        "era_payment_posting_90_percent_automated",
+        "ar_management_75_85_percent_automated",
+        "patient_billing_85_90_percent_automated",
+        "own_clearinghouse_800_payer_connections",
+        "ai_driven_claim_validation",
+        "patient_engagement_suite",
+        "payment_processing_stripe_integration",
+        "buy_now_pay_later_affirm"
+      ],
+      "peer_adoption": {
+        "customer_count": "84000_plus_practices",
+        "transaction_volume": "112M_claims_per_year",
+        "claims_revenue_monthly": "5_4B_total_2_9B_via_trellis",
+        "scale": "national_us",
+        "dso_partnerships": [
+          "Heartland Dental (2017 confirmed)",
+          "Aspen Dental (2017 confirmed)",
+          "Pacific Dental Services (2017 confirmed)",
+          "Smile Brands (2017 confirmed)",
+          "Top 10 DSOs confirmed in 2017"
+        ],
+        "market_position": "rcm_first_platform",
+        "inc_5000": "15 consecutive years"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "practices_served": "84,000+ dental practices (35% of addressable market)",
+        "first_pass_acceptance": "96%",
+        "claims_monthly": "112M per year (7.8M monthly)",
+        "attachments_annual": "40.2M per year",
+        "payer_connections": "800+ plans and payers",
+        "customer_satisfaction": "NPS 74, 4.9 Google rating, 91% loyalty",
+        "automation_overall": "80-85% across all RCM services",
+        "time_savings_attachments": "90%+ reduction (Village Pointe: 10+ hrs/week to <1 hr/week)",
+        "collections_impact": "Collections increased tremendously (TLC Dental testimonial)",
+        "confidence": "high"
+      },
+      "category_specific": {
+        "clearinghouse_model": "Operates own clearinghouse (NOT partnering with third-party)",
+        "rcm_services": {
+          "eligibility": "Real-time 270/271 in seconds, batch verification, automated workflows, 90-95% automated",
+          "claims": "Own clearinghouse, 800+ payer connections, 96% acceptance, 95% automated",
+          "scrubbing": "Pre-submission validation, payer-specific edits, 95% automated",
+          "denials": "Automated alerts, rejection reason tooltips, 60-70% automated",
+          "payment_posting": "ERA auto-posting to patient ledger, 90% automated",
+          "ar_management": "Automated balance ID, bulk messaging, 75-85% automated",
+          "patient_billing": "Automated statement print/mail, payment portal, 85-90% automated"
+        },
+        "compliance": "HIPAA, SOC 2 Type II, HITRUST CSF v11.1.0 (i1), EHNAC HNAP accredited",
+        "pricing_model": "Flat monthly subscription (~$99/month unlimited) vs per-transaction competitors"
+      },
+      "differentiation_from_v007": {
+        "business_model": "RCM-first (comprehensive platform) vs DXC clearinghouse-first (EDI specialist)",
+        "pricing": "Subscription ($99/month unlimited) vs DXC per-transaction ($0.25-$0.51/claim)",
+        "service_scope": "Full patient engagement suite vs DXC core clearinghouse focus",
+        "acceptance_rate": "96% vs DXC 99%",
+        "payer_connections": "800 vs DXC 1,400",
+        "platform_approach": "Vyne Trellis all-in-one vs DXC modular services",
+        "acquisition_strategy": "Aggressive M&A (6 acquisitions 2020-2023) vs DXC selective",
+        "target_market": "Practices seeking comprehensive RCM transformation vs DXC bulletproof claims processing"
+      }
+    },
+    "V006": {
+      "vendor_name": "iCoreConnect (iCore RCM Platform)",
+      "category": "RCM",
+      "tier": 1,
+      "founded": "~1990s-2000s (evolved from legacy entities)",
+      "ownership": "Acquired by Standard Dental (Oct 2025, post-Chapter 11)",
+      "corporate_note": "iCoreConnect Inc. (ICCT) filed Chapter 11 June 2025; substantially all operating assets acquired by Standard Dental Oct 1, 2025. Products continue under iCore brand.",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Henry Schein One Authorized Software Integration - listed under Authorized Practice Operations & Management Vendors. Uses HSOne API for read/write to Dentrix database. Official API Exchange vendor.",
+          "confidence": "high",
+          "source": "https://www.henryscheinone.com/dental-solutions/api-exchange/vendors-list/"
+        },
+        "Dentrix_Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Same HSOne API Exchange authorization covers Dentrix Ascend (cloud). Single API layer shared by Dentrix on-prem and Ascend. Insurance verification and benefits integration confirmed.",
+          "confidence": "high",
+          "source": "https://www.henryscheinone.com/dental-solutions/api-exchange/vendors-list/"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "CEO quote lists OpenDental among 'leading practice management solutions' iCore integrates with. Not listed in Open Dental's subset of Authorized API Vendors, suggesting connector/portal vs. certified API.",
+          "confidence": "medium",
+          "source": "https://www.healthcarebusinessreview.com/icoreconnect"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Named explicitly among PMSes iCore integrates with. Support docs reference 'Fully Integrated Sites' for iCoreRx listing Eaglesoft. No public authorized API vendor listing found.",
+          "confidence": "medium",
+          "source": "https://support.icoreconnect.com/"
+        },
+        "Carestream": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "CEO quote names Carestream alongside Dentrix/Eaglesoft/OpenDental as named PMS integration. Likely connector/clearinghouse-based vs. full API.",
+          "confidence": "medium",
+          "source": "https://www.icoreconnect.com/icoreenterprise"
+        }
+      },
+      "key_features": [
+        "platform_plus_service_rcm_model",
+        "automated_eligibility_7_day_advance",
+        "icoreverify_80_90_percent_automated",
+        "claim_submission_99_percent_clean_rate",
+        "denial_management_automated_followup",
+        "payment_posting_era_check_eft",
+        "ar_management_up_to_40_percent_reduction",
+        "patient_billing_icorepay",
+        "dedicated_us_rcm_team",
+        "weekly_strategy_calls",
+        "executive_reporting",
+        "multi_module_platform_erx_secure_comms_analytics",
+        "200_plus_association_agreements",
+        "2100_plus_insurer_connections",
+        "95_percent_dental_insurance_coverage"
+      ],
+      "peer_adoption": {
+        "customer_count": "20,000+ healthcare providers (dental + medical)",
+        "association_endorsements": "200+ association product agreements, endorsed by Michigan, Virginia, Alaska, Nebraska state dental societies",
+        "dso_partnerships": [
+          "DSO MarketWatch partnership (announced)",
+          "Dentrix Enterprise co-marketing for multi-location groups"
+        ],
+        "dso_focus": "DSO-oriented marketing and partnerships targeting centralized verification for group practices",
+        "scale": "national",
+        "revenue_2024": "$10.7M (32% YoY growth from $8.15M in 2023)"
+      },
+      "notable_claims": {
+        "clean_claim_rate": "99%",
+        "denial_reduction": "40% fewer claim denials",
+        "ar_reduction": "Reduce A/R days by up to 40%",
+        "time_savings": "70% less time spent on insurance follow-ups",
+        "automation_coverage": "80-90% via automated eligibility checks",
+        "payer_connections": "2,100+ insurers, ~95% of dental insurance market",
+        "confidence": "medium"
+      },
+      "pricing_model": {
+        "type": "percentage_of_collections_plus_base_fee",
+        "tiers": {
+          "under_40k": "$1,350/month flat",
+          "40k_100k": "3.5% of total insurance collections",
+          "101k_150k": "3.0% of total insurance collections",
+          "151k_plus": "2.5% of total insurance collections"
+        },
+        "positioning": "Full outsourced billing department vs. per-transaction clearinghouse",
+        "confidence": "high",
+        "source": "https://icoreconnect.com/products/dental-insurance-billing"
+      },
+      "geographic_coverage": "national",
+      "certifications": {
+        "hipaa": "YES (claimed)",
+        "soc2": "YES (type unspecified)",
+        "tx_ramp": "YES (Level 2 for iCoreRx)",
+        "hitrust": "NOT FOUND",
+        "onc": "NOT APPLICABLE (RCM not EHR)"
+      },
+      "differentiation_from_v005_v007": {
+        "vs_v007_dentalxchange": {
+          "pricing": "% of collections + base fee vs. DXC per-transaction ($0.51/claim)",
+          "scope": "Multi-module platform (RCM + eRx + analytics + comms) vs. DXC clearinghouse-first (EDI specialist)",
+          "service": "Platform + dedicated RCM team vs. infrastructure-only"
+        },
+        "vs_v005_vyne": {
+          "service_mix": "Platform + Human Expertise (U.S. RCM division, strategy calls) vs. Vyne RCM-first software",
+          "breadth": "Front + back office (eRx, secure email, analytics) vs. narrower RCM focus",
+          "associations": "200+ association agreements vs. fewer documented endorsements"
+        },
+        "unique_value": "Platform play (multiple software modules) paired with dedicated RCM service team. Deep Dentrix/Dentrix Ascend integration via HSOne API Exchange. National endorsements across many state dental societies."
+      }
+    },
+    "V007": {
+      "vendor_name": "DentalXChange",
+      "category": "RCM",
+      "tier": 1,
+      "founded": 1989,
+      "ownership": "pe_kkr_2025_recapitalization",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Certified integration partner, real-time eligibility, bidirectional claim status sync",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Direct ClaimConnect integration, real-time claim submission, ERA auto-download",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Direct integration, electronic claim submission, ERA auto-matching",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "20-year partnership since 2005, XConnect APIs, real-time automated workflows",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "edi_claim_submission",
+        "eligibility_verification_950_payers",
+        "era_eft_automated",
+        "claim_tracking_statusconnect",
+        "payer_network_1400_connections",
+        "99_percent_first_pass_acceptance",
+        "50_percent_admin_time_reduction",
+        "83_percent_compliance_improvement"
+      ],
+      "peer_adoption": {
+        "customer_count": "200000_providers",
+        "scale": "national",
+        "market_position": "second_largest_in_industry"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "first_pass_acceptance_rate": "99%",
+        "admin_time_reduction": "50%",
+        "compliance_improvement": "83%",
+        "pricing": "$0.51 per claim",
+        "confidence": "high"
+      }
+    },
+    "V008": {
+      "vendor_name": "Weave",
+      "category": "Telephony",
+      "tier": 2,
+      "founded": null,
+      "ownership": "public",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Henry Schein One API Exchange certified partner",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Henry Schein One API Exchange certified partner",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Real-time sync, Call Pop, digital form writebacks",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Real-time sync, Call Pop integration",
+          "confidence": "high"
+        },
+        "Curve": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Official integration",
+          "confidence": "medium"
+        },
+        "SoftDent": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Listed as integrated PMS",
+          "confidence": "medium"
+        },
+        "Dolphin": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Listed as integrated PMS",
+          "confidence": "medium"
+        },
+        "Fuse": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Patterson integration documentation",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Digital forms support",
+          "confidence": "medium"
+        },
+        "Crystal": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Digital forms support",
+          "confidence": "medium"
+        }
+      },
+      "key_features": [
+        "voip_phone_system",
+        "two_way_patient_texting",
+        "automated_appointment_reminders",
+        "missed_call_text_automation",
+        "online_scheduling",
+        "call_pop_patient_profile",
+        "call_analytics",
+        "digital_forms_writeback",
+        "insurance_verification",
+        "dso_enterprise_features_sso_rbac"
+      ],
+      "peer_adoption": {
+        "customer_count": "thousands_dental_offices_us_canada",
+        "scale": "national_us_canada",
+        "dso_partnerships": ["Affordable Care", "Dental Care Alliance"]
+      },
+      "geographic_coverage": "us_canada",
+      "notable_claims": {
+        "customer_count": "Thousands of dental offices across U.S. and Canada",
+        "confidence": "high"
+      }
+    },
+    "V009": {
+      "vendor_name": "Solutionreach",
+      "category": "Telephony",
+      "tier": 2,
+      "founded": null,
+      "ownership": "private",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Integration with Dentrix G5, write-back capability",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Henry Schein One API Exchange",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Digital intake write-backs, saves hours per day",
+          "confidence": "high"
+        },
+        "Dentrix Enterprise": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Enterprise pricing page reference",
+          "confidence": "medium"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Partnership announcement",
+          "confidence": "medium-high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Sync and launcher support",
+          "confidence": "medium"
+        },
+        "SoftDent": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Sync support",
+          "confidence": "medium"
+        },
+        "Curve": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Third-party mention",
+          "confidence": "medium"
+        }
+      },
+      "key_features": [
+        "automated_appointment_reminders",
+        "two_way_texting_bulk_messaging",
+        "digital_intake_online_forms",
+        "recall_reactivation_campaigns",
+        "online_review_reputation_tools",
+        "dso_enterprise_capabilities",
+        "mobile_app_cloud_access",
+        "integrated_phone_voip_goto",
+        "revenue_cycle_messaging"
+      ],
+      "peer_adoption": {
+        "customer_count": "tens_of_thousands_practices",
+        "patients_served": "80_million_americans",
+        "scale": "national_us",
+        "market_position": "number_1_patient_communication_for_dsos"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "practices_count": "Tens of thousands of healthcare practices",
+        "patients_served": "80 million Americans",
+        "recall_improvement": "50% more recall appointments (case study)",
+        "recall_multiplier": "10x more recall appointments (alternative case study)",
+        "dso_revenue_impact": "$3M annual recall revenue added (27-practice DSO)",
+        "new_patient_source": "50% of new patients from reviews (pediatric practice)",
+        "time_savings": "Several hours per day saved via digital intake",
+        "confidence": "high"
+      }
+    },
+    "V010": {
+      "vendor_name": "RevenueWell",
+      "category": "Telephony",
+      "tier": 2,
+      "founded": null,
+      "ownership": "private",
+      "notes": "Replaced placeholder 'Dental Phone Pro' (which is a training program, not software) with RevenueWell",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Dedicated integration page, write-back capability",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Dedicated integration page",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Demographics, health history, insurance write-back",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Integration documentation",
+          "confidence": "medium-high"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Partnerships and integrations page",
+          "confidence": "medium"
+        },
+        "Fuse": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Patterson integration documentation",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "voip_phone_system_revenuewell_phone",
+        "screen_pop_caller_id",
+        "call_recording_pbx_features",
+        "missed_call_text_alerts",
+        "two_way_texting_messaging",
+        "online_scheduling_writeback",
+        "digital_forms_writeback",
+        "patient_portal_online_payments",
+        "email_marketing_reviews",
+        "analytics_reporting_insights",
+        "mobile_app_on_the_go",
+        "ada_member_advantage_endorsed"
+      ],
+      "peer_adoption": {
+        "customer_count": "thousands_dental_practices",
+        "ada_endorsement": "ADA Member Advantage",
+        "scale": "national_us"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "customer_count": "Thousands of dental practices",
+        "ada_endorsement": "ADA Member Advantage endorsed",
+        "confidence": "high"
+      }
+    },
+    "V011": {
+      "vendor_name": "Lighthouse 360",
+      "category": "Scheduling",
+      "tier": 2,
+      "founded": 2006,
+      "ownership": "henry_schein_one_acquired_2019",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Real-time bidirectional sync every 10 minutes, two-way calendar sync",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Henry Schein One API Exchange authorized integration",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Official supported platforms page, bidirectional sync",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Supported platforms, real-time sync",
+          "confidence": "high"
+        },
+        "Curve": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "2016 integration announcement, automatic data sharing",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Canadian support page, third-party reviews",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "online_booking_widget_24_7",
+        "waitlist_fill_in_feature",
+        "automated_appointment_reminders",
+        "calendar_sync_10_minutes",
+        "multi_provider_scheduling",
+        "patient_portal_digital_forms",
+        "two_way_texting"
+      ],
+      "peer_adoption": {
+        "customer_count": "11000_plus_practices",
+        "scale": "international_us_canada_uk",
+        "dso_ready": true,
+        "awards": "2017 Dentaltown Townie Choice Award, 4.9/5 Dental Product Shopper"
+      },
+      "geographic_coverage": "us_canada_uk",
+      "notable_claims": {
+        "customer_count": "11,000+ dental practices",
+        "no_show_reduction": "96% of clients saw reduced no-shows, 40% average reduction",
+        "efficiency_improvement": "90% of practices reported increased efficiency",
+        "time_savings": "16 hours per week saved for front desk staff",
+        "production_increase": "30% production increase on average",
+        "staff_satisfaction": "80% of clients say staff happiness increased",
+        "confidence": "high"
+      }
+    },
+    "V012": {
+      "vendor_name": "Dental Intelligence",
+      "category": "Scheduling",
+      "tier": 2,
+      "founded": 2012,
+      "ownership": "private_funded",
+      "funding": "49M_total",
+      "revenue": "15M_annual",
+      "employees": 254,
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Full-bundle integration, real-time sync, auto-create appointments",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Cloud-based integration, Engagement platform integrated",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Full-bundle integration, direct write-back, real-time sync",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Full-bundle integration, auto-create appointments",
+          "confidence": "high"
+        },
+        "Curve": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Strategic partnership June 2021, LocalMed acquisition integration",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 0,
+          "integration_type": "none",
+          "evidence": "No integration found, only Planet DDS partnerships with other vendors",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "online_booking_widget_google_reserve",
+        "automated_appointment_reminders",
+        "calendar_sync_real_time",
+        "multi_provider_scheduling",
+        "insurance_verification_at_booking",
+        "patient_portal_digital_forms",
+        "analytics_bi_core_strength",
+        "morning_huddle_daily_metrics",
+        "provider_pulse_performance",
+        "liveops_real_time_tracking",
+        "profitability_formula",
+        "patient_finder_opportunities"
+      ],
+      "peer_adoption": {
+        "customer_count": "9000_plus_practices",
+        "scale": "national_us",
+        "dso_partnerships": ["Straine Dental Management", "Affordable Care (350+ practices)", "Patterson Dental"]
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "customer_count": "9,000+ dental practices (July 2025)",
+        "payments_processed": "$1 billion+",
+        "revenue": "$15 million annual",
+        "funding": "$49 million total",
+        "employees": "254 across six continents",
+        "confidence": "high"
+      }
+    },
+    "V013": {
+      "vendor_name": "NexHealth",
+      "category": "Scheduling",
+      "tier": 1,
+      "founded": 2017,
+      "ownership": "private_unicorn",
+      "valuation": "1B_series_c_2022",
+      "funding": "176M_plus",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "G6.2+ versions, NexHealth Synchronizer, 10-15 second sync, ledger sync",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "All cloud versions, seamless integration, real-time sync",
+          "confidence": "high"
+        },
+        "Dentrix Enterprise": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "All server versions, bidirectional sync via NexHealth Synchronizer",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "V17+ supported, multi-clinic support, ledger sync",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Version 18+, n-site support, payment ledger sync",
+          "confidence": "high"
+        },
+        "Curve": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "All cloud versions, Curve Hero support, real-time sync",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "All cloud versions, waitlist and schedule templates support",
+          "confidence": "high"
+        }
+      },
+      "additional_ehr_integrations": "35+ total verified systems (athenahealth, Cloud9, Dolphin, eClinicalWorks, ModMed, OrthoTrac, PracticeWorks, NextGen, Epic, Easy Dental, DentiMax, EZDental, Elation, Fuse, and more)",
+      "key_features": [
+        "online_booking_widget_20_second_booking",
+        "waitlist_asap_list",
+        "automated_appointment_reminders",
+        "calendar_sync_10_15_seconds",
+        "multi_provider_scheduling",
+        "insurance_verification_real_time",
+        "patient_portal",
+        "digital_forms_smart_forms",
+        "payment_processing_stripe",
+        "nexhealth_synchronizer_proprietary",
+        "google_reserve_integration",
+        "kiosk_mode"
+      ],
+      "peer_adoption": {
+        "customer_count": "10000_plus_practices_75000_providers",
+        "patients_served": "30M",
+        "patient_records": "68M",
+        "scale": "national_us_canada",
+        "market_position": "unicorn_1B_valuation",
+        "dso_partnerships": [
+          "NADG (200+ locations, 5x new patient growth)",
+          "Coast Dental (106 locations, 5-10 hrs/day saved)",
+          "Jefferson Dental (70+ locations)",
+          "Dr Dental (40 offices, 15% revenue recovery)",
+          "Mid-Atlantic Dental Partners"
+        ]
+      },
+      "geographic_coverage": "us_canada",
+      "notable_claims": {
+        "valuation": "$1 billion (unicorn status, Series C 2022)",
+        "funding": "$176M+ total ($125M Series C)",
+        "practices": "10,000+ practices",
+        "providers": "75,000 healthcare providers",
+        "patients": "30 million patients",
+        "patient_records": "68 million patient records",
+        "nadg_growth": "5x increase in new patient bookings per week (200+ locations)",
+        "virginia_family_dentistry_no_shows": "50% reduction (13-14% to 7% in 2 months across 16 locations)",
+        "new_appointments_monthly": "18 average from online booking, 15-45 from online channels",
+        "booking_time": "~20 seconds average",
+        "google_reserve_boost": "10-20% boost in bookings",
+        "waitlist_revenue": "$3,000 revenue from 15 additional patients/week (Norbo Dental)",
+        "apple_pay_adoption": "20% of patients used Apple Pay in first week",
+        "confidence": "high"
+      }
+    },
+    "V014": {
+      "vendor_name": "DentalXChange",
+      "category": "Clearinghouse",
+      "tier": 1,
+      "founded": 1989,
+      "ownership": "pe_kkr_2025_recapitalization",
+      "notes": "Same vendor as V007 (RCM category). DentalXChange provides both RCM and Clearinghouse services. Listed separately in both categories for catalog completeness.",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Batch claim submission via ClaimConnect Utility (CCU), batch file upload model. Note: Henry Schein One uses DXC as partner but recommends native eClaims.",
+          "confidence": "medium",
+          "competitive_note": "Henry Schein One owns Dentrix and has competitive dynamics with DXC despite partnership"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Batch processing through Henry Schein One infrastructure",
+          "confidence": "medium"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Direct ClaimConnect integration, real-time claim submission, eligibility verification, ERA auto-download, electronic attachments",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Direct integration, electronic claim submission, real-time eligibility, ERA auto-matching",
+          "confidence": "high"
+        },
+        "Curve": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Strategic integration partnership, claims/eligibility/RCM workflows",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "20-year partnership since 2005, XConnect APIs, real-time automated workflows. Planet DDS first partner to leverage XConnect APIs.",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "edi_claim_submission_99_percent_clean",
+        "eligibility_verification_950_payers",
+        "era_eft_automated",
+        "payer_network_1400_connections",
+        "claim_tracking_statusconnect",
+        "attachments_attachmentconnect",
+        "claim_status_one_click"
+      ],
+      "peer_adoption": {
+        "provider_count": "200000_nearly",
+        "scale": "national_us",
+        "market_position": "second_largest_in_industry",
+        "dso_partnerships": ["American Dental Partners"]
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "providers": "Nearly 200,000 providers (107,000+ dental)",
+        "payer_connections": "1,400 payer connections, 950+ for eligibility",
+        "clean_claim_rate": "99%",
+        "transactions_annual": "1 billion+ EDI transactions",
+        "claims_annual": "300 million dental claims",
+        "claim_dollar_volume": "$90 billion annually (historical 2022)",
+        "partners": "Over 175 partners in network",
+        "confidence": "high"
+      }
+    },
+    "V015": {
+      "vendor_name": "NEA Fast Attach (Vyne Dental)",
+      "category": "Clearinghouse",
+      "subcategory": "attachment_service_only",
+      "tier": 1,
+      "founded": "~1997-2000",
+      "ownership": "pe_jordan_company_2019",
+      "notes": "FastAttach is attachment-only service. Full clearinghouse (EDI claims, eligibility, ERA) requires separate Vyne Trellis platform. ALL EHR integrations are partial_csv (manual workflows) - users must log into separate FastAttach system to upload attachments after claim submission.",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Manual workflow, FastAttach desktop app notifies when attachments needed, user must log in to upload",
+          "confidence": "high"
+        },
+        "Dentrix Ascend": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Supported as attachment option, requires manual interaction",
+          "confidence": "medium"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Semi-automated via clearinghouse, user still needs to log into NEA account to upload images",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Not directly integrated, user review states 'software isn't integrated with NEA to send claims'",
+          "confidence": "medium"
+        },
+        "Curve": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Web app does not write back to claim in Curve, NEA attachment ID will not display automatically",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 0,
+          "integration_type": "none",
+          "evidence": "Mentioned as compatible but no specific integration details found",
+          "confidence": "low"
+        }
+      },
+      "key_features": [
+        "attachment_support_xrays_narratives",
+        "fastkapture_mobile_image_capture_patented",
+        "payer_network_800_plans",
+        "claim_tracking_24_7",
+        "fastlook_carrier_requirements",
+        "hitrust_certified",
+        "100_percent_electronic_submission"
+      ],
+      "peer_adoption": {
+        "practice_count": "84000_plus_vyne_dental_overall",
+        "fastattach_providers": "50000_plus",
+        "scale": "national_us",
+        "market_position": "largest_e_attachment_provider_dental",
+        "dso_partnerships": [
+          "ALL_TOP_10_DSOs",
+          "Heartland Dental",
+          "Aspen Dental",
+          "Pacific Dental Services",
+          "Smile Brands",
+          "American Dental Partners",
+          "Great Expressions",
+          "Dental Care Alliance",
+          "Affordable Dentures & Implants",
+          "Western Dental",
+          "InterDent"
+        ],
+        "dso_market_penetration": "100_percent_top_10_dsos"
+      },
+      "geographic_coverage": "national_us",
+      "notable_claims": {
+        "practice_count": "84,000+ dental practices (Vyne overall), 50,000+ (FastAttach)",
+        "payer_network": "800+ dental plans",
+        "attachments_annual": "40.2 million processed per year",
+        "attachments_monthly": "3+ million electronic images",
+        "claim_acceptance": "96% (Vyne overall)",
+        "all_top_10_dsos": "100% market penetration of top 10 DSOs",
+        "confidence": "high"
+      }
+    },
+    "V016": {
+      "vendor_name": "Henry Schein TechCentral",
+      "category": "IT_MSP",
+      "tier": 1,
+      "founded": null,
+      "ownership": "Henry Schein Inc. (NASDAQ: HSIC), Fortune 500",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Automated monitoring, remote management agents, direct EHR support tickets, in-product chat support, preconfigured workstations",
+          "confidence": "high"
+        },
+        "Dentrix_Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Cloud-based DSO solution with centralized management, full proactive monitoring",
+          "confidence": "high"
+        },
+        "Dentrix_Enterprise": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Multi-location support with enterprise-grade monitoring",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Explicitly listed as supported system, hardware compatibility testing, troubleshooting support",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Explicitly listed as supported system, hardware compatibility and troubleshooting",
+          "confidence": "high"
+        },
+        "Denticon": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Listed as supported with hardware/software integration support",
+          "confidence": "high"
+        },
+        "Carestack": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Listed as supported system",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "help_desk_support_877_483_0382",
+        "network_management_proactive_monitoring",
+        "server_cloud_hosting_omnicore_haas",
+        "security_hipaa_compliance_sras_baa",
+        "ehr_specific_support_dentrix_family",
+        "disaster_recovery_hybrid_backup_15min",
+        "24_7_threat_monitoring_mdr",
+        "98_percent_24_hour_resolution_sla",
+        "98_percent_remote_resolution_rate",
+        "digital_imaging_integration"
+      ],
+      "peer_adoption": {
+        "customer_count": "thousands_of_practices",
+        "installations": "45000_plus",
+        "years_in_business": "20_plus",
+        "scale": "national_us_canada",
+        "dso_partnerships": ["Elite Dental Partners (96 locations)", "Kimball and Beecher Family Dentistry (7 locations, 111 chairs)"],
+        "market_position": "fortune_500_backed"
+      },
+      "geographic_coverage": "national_us_canada",
+      "notable_claims": {
+        "installations": "45,000+",
+        "remote_resolution_rate": "98%",
+        "resolution_sla": "98% within 24 hours",
+        "dso_deployment": "96-location Elite Dental Partners deployment",
+        "dentrix_user_base": "30,000 Dentrix family users",
+        "confidence": "high"
+      },
+      "category_specific": {
+        "hipaa_compliance": "Comprehensive SRAs through ClearDATA, BAAs, encryption, access controls, compliance monitoring",
+        "support_24_7": "24/7 AI-powered MDR, proactive RMM 24/7",
+        "remote_vs_onsite": "Hybrid model: 98% remote resolution, hundreds of field technicians nationwide",
+        "response_time_sla": "98% resolved within 24 hours",
+        "proactive_monitoring": "Continuous RMM, automatic alerts, quarterly visits, backup verification, OS patch management"
+      }
+    },
+    "V017": {
+      "vendor_name": "Pact-One Solutions",
+      "category": "IT_MSP",
+      "tier": 1,
+      "tier_note": "Serves both premium DSO/enterprise AND basic/mid-tier markets with different service tiers",
+      "founded": 2003,
+      "ownership": "acquired_by_executech_2024",
+      "status": "duplicate_with_V018",
+      "notes": "V017 and V018 both identified Pact-One Solutions. Pact-One legitimately serves both premium (DSO/enterprise with Virtual CIO/CTO, 24/7 support) AND basic/mid-tier ($749-$800/month entry pricing, small practices). For distinct vendor diversity, consider Medix Dental IT for V017.",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Well-versed in dental practice management expertise, proactive monitoring and response",
+          "confidence": "high"
+        },
+        "Dentrix_Ascend": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Shown in partner logos on DSO services page, cloud platform support confirmed",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Explicitly mentioned with comprehensive support",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Explicitly mentioned with full support capabilities",
+          "confidence": "high"
+        },
+        "Curve_Dental": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Mentioned in blog content demonstrating software expertise",
+          "confidence": "high"
+        },
+        "Dexis": {
+          "integration_quality": 2,
+          "integration_type": "full_api",
+          "evidence": "Explicitly mentioned for imaging software support",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "help_desk_remote_phone_email_chat",
+        "network_management_24_7_365_monitoring",
+        "server_cloud_hosting_dentrix_in_cloud",
+        "security_hipaa_compliance_risk_assessments",
+        "ehr_specific_support_all_major_platforms",
+        "disaster_recovery_automated_backups",
+        "24_7_365_support_rapid_response",
+        "virtual_cio_cto_services",
+        "dso_dedicated_services_page",
+        "multi_location_unified_systems"
+      ],
+      "peer_adoption": {
+        "customer_count": "thousands_of_dental_professionals",
+        "years_in_business": "20_plus",
+        "scale": "national_all_50_states",
+        "dso_capabilities": "dedicated_dso_services_page",
+        "multi_location_management": "seamless_across_multiple_offices",
+        "named_customers": ["Dr. Christian Lee DDS (13 years)", "Tim Betita DDS MD (multiple Southern California locations)", "Robert Goodis DDS (11 doctors, 50+ computers)"],
+        "acquisitions": ["HiTechnique", "Dyrand Systems", "California Computer Options", "DSA Technologies", "Computer Habits"]
+      },
+      "geographic_coverage": "national_all_50_states",
+      "notable_claims": {
+        "customer_count": "Thousands of dental professionals",
+        "years_experience": "20+ years since 2003",
+        "coverage": "All 50 states",
+        "dso_capabilities": "Dedicated DSO services division",
+        "confidence": "high"
+      },
+      "category_specific": {
+        "hipaa_compliance": "HIPAA-compliant automated backups, security, risk assessments, Abyde partnership",
+        "support_24_7": "24/7/365 monitoring, proactive maintenance, rapid-response IT support",
+        "remote_vs_onsite": "Hybrid with remote helpdesk primary and local onsite technicians",
+        "response_time_sla": "Rapid response times mentioned, specific SLAs not publicly disclosed",
+        "proactive_monitoring": "Round-the-clock monitoring, proactive maintenance, prevent issues before they arise",
+        "enterprise_features": "Virtual CIO/CTO, dedicated DSO page, multi-location unified systems, full IT outsourcing"
+      }
+    },
+    "V018": {
+      "vendor_name": "Pact-One Solutions",
+      "category": "IT_MSP",
+      "tier": 2,
+      "tier_note": "Basic/mid-tier positioning with small practice focus, $749-$800/month entry pricing",
+      "founded": 2003,
+      "ownership": "acquired_by_executech_2024",
+      "status": "duplicate_with_V017",
+      "notes": "V018 is duplicate of V017. Both subagents independently identified Pact-One Solutions. Pact-One serves both premium DSO clients AND basic/mid-tier small practices with different service tiers. For distinct vendor diversity, alternative candidates include Computer Geeks, Darkhorse Tech, or Digital Dental Solutions.",
+      "ehr_integrations": {
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv_to_full_api",
+          "evidence": "Full support with dedicated technician expertise, remote and onsite troubleshooting",
+          "confidence": "high"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv_to_full_api",
+          "evidence": "Full support with dedicated expertise",
+          "confidence": "high"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv_to_full_api",
+          "evidence": "Full support explicitly stated",
+          "confidence": "high"
+        },
+        "Curve_Dental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv_to_full_api",
+          "evidence": "Mentioned in dental software expertise context",
+          "confidence": "high"
+        }
+      },
+      "key_features": [
+        "help_desk_phone_855_339_2964_email_chat",
+        "network_management_24_7_365_monitoring",
+        "server_cloud_hosting_dentrix_cloud_hybrid",
+        "security_hipaa_compliance_automated_backups",
+        "ehr_specific_support_well_versed",
+        "disaster_recovery_automated_nightly_backups",
+        "support_hours_mon_fri_7_30am_5pm_pst",
+        "after_hours_emergency_support",
+        "three_service_tiers_remote_totalcare_hybrid"
+      ],
+      "peer_adoption": {
+        "customer_count": "1000_plus_dental_professionals",
+        "scale": "west_coast_focus_national_remote",
+        "small_practice_focus": "1_5_chair_practices",
+        "multi_location_capabilities": true,
+        "testimonials": ["Christian Lee DDS (13 years)", "Robert Goodis DDS (11 doctors, 50+ computers since 1990)", "Tim Betita DDS MD (multiple locations)"]
+      },
+      "geographic_coverage": "west_coast_primary_national_remote",
+      "office_locations": ["Las Vegas NV (HQ)", "San Diego CA", "San Francisco Bay Area CA", "Portland OR", "Seattle WA"],
+      "notable_claims": {
+        "customer_count": "Over 1,000 dental professionals",
+        "small_practice_pricing": "$500-$1,200/month for 1-5 chairs",
+        "entry_pricing": "$749-$800/month",
+        "confidence": "high"
+      },
+      "category_specific": {
+        "hipaa_compliance": "HIPAA-compliant backup/disaster recovery, risk assessments, two-factor authentication, compliance monitoring",
+        "support_hours": "Mon-Fri 7:30 AM - 5:00 PM Pacific, after-hours emergency support, weekend emergency on-call",
+        "remote_vs_onsite": "Three tiers: Remote Assist (remote-only $749+/month), TotalCare (comprehensive remote + onsite), Hybrid (custom)",
+        "response_time": "Rapid response times in testimonials, same-day implied, specific SLAs not publicly disclosed",
+        "proactive_monitoring": "24/7/365 network monitoring, automated alerts, preventive maintenance, software patch management",
+        "pricing_structure": "Small (1-5 chairs) $500-$1,200/month, Medium (6-10 chairs) $1,200-$2,500/month, Large (10+ chairs) $2,500+/month"
+      }
+    },
+    "V019": {
+      "vendor_name": "Patterson Dental",
+      "category": "Supplies",
+      "tier": 1,
+      "founded": 1877,
+      "ownership": "acquired_by_patient_square_capital_2025",
+      "ehr_integrations": {
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Patterson OWNS Eaglesoft (30,000 users) BUT supply ordering conducted through separate online portal (PatersonDental.com), NOT directly from within EHR",
+          "confidence": "high",
+          "critical_note": "Despite EHR ownership, NO direct ordering integration from EHR interface"
+        },
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR, no direct integration found",
+          "confidence": "medium"
+        },
+        "Dentrix_Ascend": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR",
+          "confidence": "medium"
+        },
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR",
+          "confidence": "medium"
+        },
+        "Curve_Dental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR",
+          "confidence": "medium"
+        }
+      },
+      "key_features": [
+        "product_range_130000_plus_products",
+        "bulk_pricing_patterson_advantage_tiered",
+        "national_distribution_59_branches",
+        "delivery_speed_1_2_days_98_percent",
+        "order_tracking_online_account",
+        "account_management_dedicated_local_reps",
+        "online_ordering_pattersondental_portal",
+        "dso_programs_fuse_formulary_navigate",
+        "patterson_advantage_loyalty_rewards",
+        "free_shipping_over_300",
+        "775_certified_service_technicians"
+      ],
+      "peer_adoption": {
+        "customer_count": "thousands_dental_practices",
+        "eaglesoft_user_base": "30000_active_users",
+        "installations": "45000_plus",
+        "years_in_business": "148",
+        "scale": "national_us_canada",
+        "dso_partnerships": [
+          "PDS Health (1,000+ practices, strategic relationship through 2027)",
+          "Heartland Dental (January 2017 partnership)"
+        ],
+        "market_position": "one_of_north_americas_largest_dental_distributors"
+      },
+      "geographic_coverage": "national_us_canada",
+      "notable_claims": {
+        "product_catalog": "130,000+ products",
+        "eaglesoft_users": "Nearly 30,000 active",
+        "delivery_coverage": "1-2 business days for 98% of customers",
+        "pds_health_partnership": "1,000+ supported practices through 2027",
+        "years_history": "148 years (founded 1877)",
+        "installations": "45,000+",
+        "confidence": "high"
+      },
+      "category_specific": {
+        "bulk_pricing_tiers": "Patterson Advantage tiered loyalty (higher spending = higher tier = greater rewards), formulary pricing for DSO accounts, volume discounts through account specialists",
+        "delivery_timeframes": "1-2 business days for 98% of customers, order cutoff 2:30 PM Central, free shipping $300+",
+        "product_range_breadth": {
+          "supplies": "130,000+ products, 3,500+ Patterson Private Brand items",
+          "equipment": "Chairs, delivery systems, lights, CAD/CAM, digital imaging, handpieces",
+          "technology": "Eaglesoft, Fuse, Dolphin PM software, patient engagement, RCM tools"
+        },
+        "dso_specific_programs": {
+          "navigate_business_services": "Target emerging DSOs with guidance",
+          "multi_location_solutions": "Formulary management, centralized ordering, approval workflows, Fuse Software for multi-location coordination",
+          "strategic_account_support": "Dedicated VP for large DSOs, custom solutions, technology integration support"
+        }
+      }
+    },
+    "V020": {
+      "vendor_name": "Benco Dental",
+      "category": "Supplies",
+      "tier": 1,
+      "founded": 1930,
+      "ownership": "family_owned_third_generation",
+      "ehr_integrations": {
+        "OpenDental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Benco is authorized distributor and partner of Open Dental PM software (2019), but this is selling the EHR itself, NOT supply ordering integration. Ordering via separate Painless portal.",
+          "confidence": "high",
+          "critical_note": "Despite Open Dental partnership, NO direct ordering integration from EHR"
+        },
+        "Dentrix": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal (Painless) separate from EHR",
+          "confidence": "medium"
+        },
+        "Dentrix_Ascend": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR",
+          "confidence": "medium"
+        },
+        "Eaglesoft": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR",
+          "confidence": "medium"
+        },
+        "Curve_Dental": {
+          "integration_quality": 1,
+          "integration_type": "partial_csv",
+          "evidence": "Online ordering portal separate from EHR",
+          "confidence": "medium"
+        }
+      },
+      "key_features": [
+        "product_range_62000_plus_products",
+        "painless_ordering_system_1988_industry_first",
+        "bulk_pricing_benco_select_tiered",
+        "bluchips_rewards_loyalty_program",
+        "national_distribution_5_fulfillment_centers",
+        "delivery_speed_next_day_80_percent_us",
+        "order_tracking_online_account",
+        "account_management_400_sales_reps",
+        "300_service_technicians",
+        "dso_strategic_markets_division",
+        "free_shipping_over_150",
+        "ai_enhanced_proton_integration"
+      ],
+      "peer_adoption": {
+        "customer_count": "30000_plus_dental_professionals",
+        "scale": "national_all_50_states",
+        "dso_partnerships": [
+          "Affordable Dentures (top 10 DSO, switched from Schein to Benco)",
+          "Elite Dental Alliance partnership"
+        ],
+        "market_position": "largest_independently_owned_dental_distributor_us",
+        "testimonials": ["Dr. Ashton Prince DMD", "Multiple long-term relationships documented"]
+      },
+      "geographic_coverage": "national_all_50_states",
+      "notable_claims": {
+        "customer_count": "30,000+ dental professionals",
+        "product_catalog": "62,000+ distinct products",
+        "delivery_coverage": "Next-day to 80%+ of US",
+        "packages_annually": "2 million+",
+        "order_accuracy": "99.95%",
+        "years_history": "95 years (founded 1930)",
+        "confidence": "high"
+      },
+      "category_specific": {
+        "bulk_pricing_tiers": {
+          "silver_membership": "$99/year - Automatic discounts, free shipping $150+, BluChips 2.5%, Buy/Get promos, extended warranties",
+          "elite_membership": "Via Elite Dental Alliance - Maximum rewards, quarterly rebates, Exclusive Savings Guarantee (spend <5% of Gross Practice Revenue or Benco refunds difference)",
+          "corporate_dso_pricing": "Cost-plus pricing model (cost + set margin), automatic best earned price"
+        },
+        "delivery_timeframes": "Next-day to 80%+ of US, free shipping $150+ (Select members), same-day processing from regional DCs, 650-1,000 orders/DC/day, 99.95% accuracy",
+        "product_range_breadth": {
+          "supplies": "62,000+ SKUs, full consumables, 1,000+ glove styles, Benco private label brands, nation's 2nd-largest teeth inventory",
+          "equipment": "Complete operatory equipment, digital imaging, sterilization, Herman Miller cabinetry (exclusive US), A-dec full line (2025 partnership)",
+          "technology": "CAD/CAM systems, intraoral scanners, 3D printers (71% sales increase 2022-2023), Open Dental PM partnership"
+        },
+        "dso_specific_programs": {
+          "strategic_markets_division": "Dedicated team for DSOs, institutions, non-profits, CHCs, federal government",
+          "cost_plus_pricing": "Transparent for corporate accounts",
+          "multi_location_support": "National account management, coordinated delivery",
+          "volume_based_programs": "Scalable pricing and service models"
+        },
+        "ecommerce_platform_painless": {
+          "features": "62,000+ items, barcode scanning, Forecaster auto-reorder tool, approval workflows, budget monitoring, invoice history, returns processing",
+          "ai_enhanced": "Proton AI integration for personalized recommendations, semantic search, reorder reminders, cross-selling ($7.21 incremental revenue per pitch, 728% increase)"
+        }
+      }
+    }
+  },
+  "category_integration_patterns": {
+    "Lab": {
+      "pattern": "ALL_partial_csv",
+      "min_quality": 1,
+      "max_quality": 1,
+      "evidence": "All 3 Lab vendors (V001, V002, V003) use portal-based file submission (STL uploads, manual Rx forms). NO full_api integrations exist in dental lab industry.",
+      "workflow_reason": "Lab workflows involve physical product manufacturing. Digital files (STL scans) uploaded to portal, manual Rx forms, no real-time bidirectional sync required."
+    },
+    "RCM": {
+      "pattern": "CAN_have_full_api",
+      "min_quality": 1,
+      "max_quality": 2,
+      "evidence": "DentalXChange (V007) has full_api with OpenDental, Eaglesoft, Dentrix, Denticon. Real-time eligibility checks, claim status updates.",
+      "workflow_reason": "RCM benefits from real-time eligibility verification and claim status updates. Bidirectional APIs reduce admin time by 50%."
+    },
+    "Telephony": {
+      "pattern": "ALL_full_api",
+      "min_quality": 2,
+      "max_quality": 2,
+      "evidence": "All 3 Telephony vendors (V008, V009, V010) require full_api. Weave, Solutionreach, RevenueWell all have real-time sync for Call Pop, schedule updates.",
+      "workflow_reason": "Telephony REQUIRES real-time sync: Call Pop (patient data displays when phone rings), appointment confirmations update PMS instantly, digital forms write back immediately."
+    },
+    "Scheduling": {
+      "pattern": "ALL_full_api",
+      "min_quality": 2,
+      "max_quality": 2,
+      "evidence": "All 3 Scheduling vendors (V011, V012, V013) require full_api. Lighthouse 360 (6/6 EHRs), Dental Intelligence (5/6), NexHealth (6/6 + 29 more).",
+      "workflow_reason": "Scheduling REQUIRES real-time sync: patient self-booking writes to PMS instantly, waitlist notifications trigger immediate updates, text confirmations sync schedule status."
+    },
+    "Clearinghouse": {
+      "pattern": "MIXED_vendor_and_ehr_specific",
+      "min_quality": 0,
+      "max_quality": 2,
+      "evidence": "DentalXChange (V014): 4/6 full_api (OpenDental, Eaglesoft, Curve, Denticon), 2/6 partial_csv (Dentrix systems - competitive dynamics). NEA Fast Attach (V015): ALL partial_csv (attachment-only product, manual upload).",
+      "workflow_reason": "Clearinghouse integration varies by: (1) Vendor capability (full clearinghouse vs attachment-only), (2) EHR vendor strategy (Henry Schein/Dentrix has competitive tension with DXC), (3) Product scope (standalone attachment vs integrated clearinghouse)."
+    },
+    "IT_MSP": {
+      "pattern": "MIXED_EHR_ownership_dependent",
+      "min_quality": 1,
+      "max_quality": 2,
+      "evidence": "Henry Schein TechCentral (V016): 3/7 full_api (Dentrix family - OWNS the EHR), 4/7 partial_csv (third-party EHRs). Pact-One Solutions (V017/V018): full_api across major platforms with proactive monitoring. Integration classification means EHR-specific expertise and automated monitoring, NOT traditional API integration.",
+      "workflow_reason": "IT/MSP 'full_api' in dental context means: automated monitoring agents, in-product support chat, preconfigured workstations, direct EHR support tickets. For owned EHRs (TechCentral owns Dentrix), deeper integration possible. Third-party EHRs receive manual troubleshooting support (partial_csv). This differs from traditional API definition.",
+      "critical_note": "IT/MSP integration quality is EHR ownership-dependent. Vendors owning EHRs (Henry Schein owns Dentrix) achieve full_api with owned systems but only partial_csv with competitors."
+    },
+    "Supplies": {
+      "pattern": "ALL_partial_csv",
+      "min_quality": 1,
+      "max_quality": 1,
+      "evidence": "Patterson Dental (V019): ALL partial_csv DESPITE owning Eaglesoft EHR (30,000 users). Benco Dental (V020): ALL partial_csv DESPITE Open Dental partnership. Both use separate online ordering portals (Patterson portal, Benco Painless). NO full_api direct ordering from EHR exists in dental supplies market as of November 2025.",
+      "workflow_reason": "Supplies ordering fundamentally requires separate e-commerce portal workflows: product browsing, price comparison, formulary management, approval workflows, shipping logistics. Even when distributor OWNS the EHR (Patterson owns Eaglesoft), supply ordering conducted through separate web portal, NOT integrated into EHR interface.",
+      "critical_finding": "EHR ownership does NOT guarantee integration for Supplies category. Patterson owns Eaglesoft (30,000 users) but still uses separate portal. This is category ceiling, not vendor limitation."
+    }
+  },
+  "integration_quality_mapping": {
+    "0": {
+      "label": "none",
+      "description": "No integration. Manual data entry, phone/fax only.",
+      "workflow": "Staff manually enters all data from paper forms or phone calls into EHR."
+    },
+    "1": {
+      "label": "partial_csv",
+      "description": "Batch file import/export, portal-based submission, manual workflows.",
+      "workflow": "User exports CSV from EHR, uploads to vendor portal, or manually logs into separate system. No real-time sync.",
+      "examples": "Labs (STL file upload), NEA Fast Attach (manual attachment upload), Dentrix+DentalXChange (batch CCU utility)"
+    },
+    "2": {
+      "label": "full_api",
+      "description": "Real-time bidirectional API sync, certified integration partners, automatic updates.",
+      "workflow": "Vendor system queries EHR database in real-time, updates flow both directions automatically without manual intervention.",
+      "examples": "Telephony Call Pop, Scheduling self-booking, RCM eligibility verification, Clearinghouse claim status updates"
+    }
+  },
+  "vendor_replacement_status": {
+    "V004_Aurident": {
+      "status": "supplement_prompt_created",
+      "file": "batch1_SUPPLEMENT_v004_replacement.md",
+      "reason": "V004 (NDX) is duplicate of V001 (National Dentex). Aurident recommended as precious metal specialist lab.",
+      "action_required": "Run supplement prompt to research Aurident, replace V004 in catalog"
+    },
+    "V005_Vyne_Dental": {
+      "status": "supplement_prompt_created",
+      "file": "batch2_SUPPLEMENT_v005_replacement.md",
+      "reason": "V005 (Apex Dental Billing) does not exist. Vyne Dental recommended as RCM vendor.",
+      "action_required": "Run supplement prompt to research Vyne Dental, add as V005 in catalog"
+    },
+    "V006_iCoreConnect": {
+      "status": "supplement_prompt_created",
+      "file": "batch2_SUPPLEMENT_v006_replacement.md",
+      "reason": "V006 (EOS Healthcare) does not exist. iCoreConnect recommended as RCM platform vendor.",
+      "action_required": "Run supplement prompt to research iCoreConnect, add as V006 in catalog"
+    },
+    "V017_or_V018_alternatives": {
+      "status": "duplication_identified",
+      "file": "results_claude_sonnet_batch5_it_supplies_vendors.md",
+      "reason": "Both V017 and V018 subagents independently identified Pact-One Solutions as optimal match. Pact-One legitimately serves both premium DSO/enterprise AND basic/mid-tier small practice markets with different service tiers ($749-$2,500+/month range).",
+      "action_required": "OPTIONAL: For distinct vendor diversity, consider replacing V017 with Medix Dental IT (premium-tier alternative with 1,000+ practices, 24/7 support, national DSO capabilities). Alternative basic/mid-tier options for V018 include Computer Geeks, Darkhorse Tech, or Digital Dental Solutions.",
+      "current_approach": "Both V017 and V018 retained as Pact-One Solutions with tier notes documenting that Pact-One serves multiple market segments. This is valid representation of market reality."
+    }
+  }
+}

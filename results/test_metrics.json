@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "model": "R-GCN (FastRGCNConv)",
+    "evaluation_date": "2025-12-06",
+    "split": "temporal",
+    "train_period": "2019-2022",
+    "validation_period": "2023-2024",
+    "test_note": "Validation used as test (no 2025 ground truth available)",
+    "seed": 48,
+    "best_epoch": 105
+  },
+
+  "link_prediction": {
+    "description": "Task 1: Predict vendor adoption probability",
+    "metrics": {
+      "pr_auc": 0.9407,
+      "roc_auc": 0.9301,
+      "accuracy": 0.85,
+      "n_samples": 158,
+      "n_positive": 79,
+      "n_negative": 79
+    },
+    "targets": {
+      "pr_auc_target": 0.937,
+      "pr_auc_met": true,
+      "pr_auc_vs_gbm": 0.0037
+    }
+  },
+
+  "risk_head": {
+    "description": "Days-A/R delta prediction for risk-based staging",
+    "metrics": {
+      "mae": 1.14,
+      "rmse": 1.46,
+      "correlation": 0.659,
+      "alpha_weight": 0.1
+    },
+    "targets": {
+      "mae_target": 3.0,
+      "mae_met": true
+    }
+  },
+
+  "calibration": {
+    "description": "Isotonic regression calibration",
+    "metrics": {
+      "brier_before": 0.1434,
+      "brier_after": 0.1105,
+      "ece_before": 0.1254,
+      "ece_after": 0.0000
+    },
+    "targets": {
+      "brier_target": 0.15,
+      "brier_met": true,
+      "ece_target": 0.10,
+      "ece_met": true
+    }
+  },
+
+  "clustering": {
+    "description": "Task 2: Pod clustering using site embeddings",
+    "metrics": {
+      "k": 10,
+      "silhouette": 0.3447,
+      "calinski_harabasz": 63.78,
+      "davies_bouldin": 0.93
+    },
+    "targets": {
+      "silhouette_target": 0.30,
+      "silhouette_met": true
+    }
+  },
+
+  "ablations": {
+    "description": "Feature importance via ablation studies",
+    "integration_quality": {
+      "baseline_pr_auc": 0.9407,
+      "ablated_pr_auc": 0.6852,
+      "delta": 0.2555,
+      "importance": "DOMINANT (25.5% of performance)"
+    },
+    "text_vs_hardcoded": {
+      "baseline_pr_auc": 0.9407,
+      "text_derived_pr_auc": 0.8224,
+      "delta": -0.1183,
+      "matrix_match_pct": 88.0,
+      "finding": "Hard-coded matrix better calibrated for synthetic data"
+    },
+    "granular_features": {
+      "site_region": -0.0147,
+      "site_ehr": -0.0147,
+      "site_revenue": -0.0068,
+      "vendor_category": -0.0141,
+      "vendor_tier": -0.0039,
+      "vendor_price": -0.0062
+    }
+  },
+
+  "summary": {
+    "all_targets_met": true,
+    "pr_auc": 0.9407,
+    "risk_mae": 1.14,
+    "silhouette": 0.3447,
+    "brier": 0.1105,
+    "ece": 0.0000
+  }
+}

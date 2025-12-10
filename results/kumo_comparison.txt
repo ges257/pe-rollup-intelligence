@@ -1,0 +1,28 @@
+============================================================
+KUMORFM vs R-GCN COMPARISON REPORT
+============================================================
+
+KumoRFM Metrics:
+  PR-AUC: 0.6208687163159374
+  ROC-AUC: 0.6552635795545586
+  Accuracy: 0.5949367088607594
+  n_samples: 158
+  n_positive: 79
+  n_negative: 79
+  threshold: 0.111241214
+
+------------------------------------------------------------
+Model Comparison (PR-AUC):
+
+  1. R-GCN                0.9407
+  2. GBM (LightGBM)       0.9370
+  3. KumoRFM              0.6209 <-- NEW
+  4. Heuristics           0.1710
+
+------------------------------------------------------------
+Analysis:
+
+  KumoRFM beats heuristics but not ML models.
+
+  Delta vs R-GCN: -0.3198
+  Delta vs GBM:   -0.3161

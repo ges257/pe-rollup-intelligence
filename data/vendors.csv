@@ -1,0 +1,21 @@
+vendor_id,name,category,tier,monthly_price_per_site
+V001,National Dental Labs,Lab,2,8000
+V002,Glidewell,Lab,3,8500
+V003,DDS Lab,Lab,1,7500
+V004,NDX,Lab,2,8000
+V005,Apex Dental Billing,RCM,2,2500
+V006,EOS Healthcare,RCM,3,3000
+V007,Dental Billing Solutions,RCM,1,2000
+V008,Weave,Telephony,3,800
+V009,Solutionreach,Telephony,2,600
+V010,Dental Phone Pro,Telephony,1,400
+V011,Lighthouse 360,Scheduling,2,400
+V012,Dental Intelligence,Scheduling,3,500
+V013,Simple Scheduler,Scheduling,1,300
+V014,DentalXChange,Clearinghouse,2,200
+V015,NEA Fast Attach,Clearinghouse,2,200
+V016,Dental IT Solutions,IT_MSP,2,1500
+V017,MicroMD IT,IT_MSP,3,2000
+V018,Tech4Dentists,IT_MSP,1,1000
+V019,Patterson Dental,Supplies,2,1200
+V020,Benco Dental,Supplies,2,1200
