@@ -43,10 +43,25 @@ st.title("🏥 PE Rollup Intelligence Platform")
 st.subheader("Vendor Consolidation Recommendations")
 st.markdown("---")
 
-# Calculate KPIs
-total_savings = df['price_delta'].sum()
-days_ar_value = -df['days_ar_delta'].sum() * 1500  # $1500 per day improved
-total_value = total_savings + days_ar_value
+# Calculate KPIs (matching business_simulation.py formulas)
+# Expected Savings = p_adoption × price_delta
+expected_savings = (df['p_adoption'] * df['price_delta']).sum()
+
+# Risk-adjusted savings (Green: 0%, Amber: 10%, Red: 25% penalty)
+risk_penalties = {'Green': 0, 'Amber': 0.1, 'Red': 0.25}
+df_temp = df.copy()
+df_temp['risk_penalty'] = df_temp['risk_label'].map(risk_penalties)
+df_temp['risk_adjusted'] = df_temp['p_adoption'] * df_temp['price_delta'] * (1 - df_temp['risk_penalty'])
+risk_adjusted_savings = df_temp['risk_adjusted'].sum()
+
+# Days-A/R Value = -expected_days_ar × $500
+# (negative delta = improvement = positive value)
+df_temp['days_ar_value'] = -df_temp['p_adoption'] * df_temp['days_ar_delta'] * 500
+days_ar_value = df_temp['days_ar_value'].sum()
+
+# Total Value = risk_adjusted_savings + days_ar_value
+total_value = risk_adjusted_savings + days_ar_value
+
 avg_days_ar = df['days_ar_delta'].mean()
 low_risk_pct = (df['risk_label'].isin(['Green', 'Amber'])).mean() * 100
 unique_sites = df['site_id'].nunique()
@@ -58,7 +73,7 @@ with col1:
     st.metric(
         label="Total Value",
         value=f"${total_value:,.0f}",
-        delta=f"+${days_ar_value:,.0f} from Days-A/R"
+        delta=f"${risk_adjusted_savings:,.0f} savings + ${days_ar_value:,.0f} A/R"
     )
 
 with col2:
@@ -131,15 +146,18 @@ st.markdown("---")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Quarterly Savings")
-    quarterly = filtered_df.groupby('quarter')['price_delta'].sum().reset_index()
+    st.subheader("Expected Quarterly Savings")
+    # Calculate expected savings (probability-weighted)
+    filtered_temp = filtered_df.copy()
+    filtered_temp['expected_savings'] = filtered_temp['p_adoption'] * filtered_temp['price_delta']
+    quarterly = filtered_temp.groupby('quarter')['expected_savings'].sum().reset_index()
     quarterly = quarterly.sort_values('quarter')
 
     fig = px.bar(
         quarterly,
         x='quarter',
-        y='price_delta',
-        labels={'price_delta': 'Savings ($)', 'quarter': 'Quarter'},
+        y='expected_savings',
+        labels={'expected_savings': 'Expected Savings ($)', 'quarter': 'Quarter'},
         color_discrete_sequence=['#3498db']
     )
     fig.update_layout(showlegend=False)
