@@ -492,12 +492,12 @@ def main():
                 }, checkpoint_dir / 'best_model.pt')
 
                 improvement_baseline = val_metrics['pr_auc'] - 0.8343
-                print(f"   ✅ Best model saved! Improvement over baseline: {improvement_baseline:+.4f}")
+                print(f"   [BEST] Model saved! Improvement over baseline: {improvement_baseline:+.4f}")
             else:
                 patience_counter += 1
 
             if patience_counter >= patience:
-                print(f"\n⚠️  Early stopping at epoch {epoch}")
+                print(f"\n[STOP] Early stopping at epoch {epoch}")
                 break
 
     # 5. Final evaluation
@@ -515,17 +515,17 @@ def main():
 
     val_metrics = evaluate_temporal(encoder, decoder, train_data, val_data, device)
 
-    print(f"\n📊 R-GCN VALIDATION RESULTS:")
+    print(f"\nR-GCN VALIDATION RESULTS:")
     print(f"   Task: Predict 2023-2024 contracts using 2019-2022 graph")
     print(f"   PR-AUC: {val_metrics['pr_auc']:.4f}")
     print(f"   ROC-AUC: {val_metrics['roc_auc']:.4f}")
     print(f"   Accuracy: {val_metrics['accuracy']:.4f}")
 
-    print(f"\n📈 COMPARISON:")
+    print(f"\nCOMPARISON:")
     print(f"   Random baseline: 0.500")
     print(f"   SAGEConv (temporal): 0.6867 ± 0.0528")
     print(f"   R-GCN (unoptimized): 0.8343")
-    print(f"   R-GCN (OPTIMIZED): {val_metrics['pr_auc']:.4f} ⭐")
+    print(f"   R-GCN (OPTIMIZED): {val_metrics['pr_auc']:.4f} *")
     print(f"   GBM baseline: 0.937 (target)")
 
     improvement_sage = val_metrics['pr_auc'] - 0.6867
@@ -537,21 +537,21 @@ def main():
     print(f"   Progress toward GBM: {progress:.1f}%")
 
     if val_metrics['pr_auc'] > 0.90:
-        print(f"\n🎉 OUTSTANDING! Optimized R-GCN beats GBM baseline!")
+        print(f"\n[OUTSTANDING] Optimized R-GCN beats GBM baseline!")
         print(f"   Paper hyperparameters + integration quality = winning combo!")
     elif val_metrics['pr_auc'] > 0.87:
-        print(f"\n✅ Excellent! Paper optimizations worked as expected!")
+        print(f"\n[EXCELLENT] Paper optimizations worked as expected!")
         print(f"   Close to GBM target - feature engineering could push us over!")
     elif val_metrics['pr_auc'] > 0.84:
-        print(f"\n✅ Good improvement! Optimizations helped.")
+        print(f"\n[GOOD] Improvement! Optimizations helped.")
         print(f"   Consider: Basis decomposition or block decomposition next.")
     elif val_metrics['pr_auc'] > 0.83:
-        print(f"\n⚠️  Modest improvement. May need:")
+        print(f"\n[NOTE] Modest improvement. May need:")
         print(f"   - More epochs (increase patience)")
         print(f"   - Basis decomposition (num_bases parameter)")
         print(f"   - Feature engineering")
     else:
-        print(f"\n⚠️  Performance degraded. Possible overfitting from:")
+        print(f"\n[WARNING] Performance degraded. Possible overfitting from:")
         print(f"   - Learning rate too high (try 0.005)")
         print(f"   - Edge dropout too aggressive (try 0.3)")
         print(f"   - Need to tune hyperparameters individually")

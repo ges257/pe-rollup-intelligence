@@ -124,7 +124,7 @@ def train_lightgbm(X_train, y_train, X_dev, y_dev, feature_names):
         callbacks=callbacks
     )
 
-    print(f"\n  ✓ Training complete!")
+    print(f"\n  [OK] Training complete!")
     print(f"  Best iteration: {model.best_iteration}")
     print(f"  Best score (AUC): {model.best_score['dev']['auc']:.4f}")
 
@@ -135,7 +135,7 @@ def save_model(model, output_dir):
     """Save trained model"""
     model_path = output_dir / "tier2_lightgbm_model.txt"
     model.save_model(str(model_path))
-    print(f"\n  ✓ Saved model: {model_path}")
+    print(f"\n  [OK] Saved model: {model_path}")
 
     return model_path
 
@@ -152,11 +152,11 @@ def make_predictions(model, X_train, X_dev, train_df, dev_df, output_dir):
 
     # Predict on train
     train_preds = model.predict(X_train, num_iteration=model.best_iteration)
-    print(f"  ✓ Train predictions: {len(train_preds)}")
+    print(f"  [OK] Train predictions: {len(train_preds)}")
 
     # Predict on dev
     dev_preds = model.predict(X_dev, num_iteration=model.best_iteration)
-    print(f"  ✓ Dev predictions: {len(dev_preds)}")
+    print(f"  [OK] Dev predictions: {len(dev_preds)}")
 
     # Save predictions
     train_pred_df = train_df[['site_id', 'vendor_id', 'label']].copy()
@@ -169,8 +169,8 @@ def make_predictions(model, X_train, X_dev, train_df, dev_df, output_dir):
     dev_pred_path = output_dir / "tier2_predictions_dev.csv"
     dev_pred_df.to_csv(dev_pred_path, index=False)
 
-    print(f"  ✓ Saved train predictions: {train_pred_path}")
-    print(f"  ✓ Saved dev predictions: {dev_pred_path}")
+    print(f"  [OK] Saved train predictions: {train_pred_path}")
+    print(f"  [OK] Saved dev predictions: {dev_pred_path}")
 
     return train_preds, dev_preds
 
@@ -190,8 +190,8 @@ def main():
     print("="*70)
 
     train_df, dev_df = load_feature_matrices(results_dir)
-    print(f"  ✓ Train: {train_df.shape}")
-    print(f"  ✓ Dev: {dev_df.shape}")
+    print(f"  [OK] Train: {train_df.shape}")
+    print(f"  [OK] Dev: {dev_df.shape}")
 
     # Prepare data
     print("\n" + "="*70)
@@ -199,9 +199,9 @@ def main():
     print("="*70)
 
     X_train, y_train, X_dev, y_dev, feature_names = prepare_data(train_df, dev_df)
-    print(f"  ✓ X_train: {X_train.shape}")
-    print(f"  ✓ X_dev: {X_dev.shape}")
-    print(f"  ✓ Features: {len(feature_names)}")
+    print(f"  [OK] X_train: {X_train.shape}")
+    print(f"  [OK] X_dev: {X_dev.shape}")
+    print(f"  [OK] Features: {len(feature_names)}")
 
     # Train model
     print("\n" + "="*70)
@@ -253,7 +253,7 @@ def main():
     print(f"  Difference: {dev_pos.mean() - dev_neg.mean():.4f}")
 
     print("\n" + "="*70)
-    print("✓ TRAINING COMPLETE!")
+    print("[OK] TRAINING COMPLETE!")
     print("="*70)
 
 

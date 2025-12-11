@@ -343,13 +343,13 @@ def main():
         test_edges = data['site', 'contracts', 'vendor'].edge_index[:, :10]
         probs = model(data.x_dict, data.edge_index_dict, test_edges)
 
-        print(f"   ✅ Model runs on GPU")
+        print(f"   [OK] Model runs on GPU")
         print(f"   GPU Memory: {torch.cuda.max_memory_allocated() / 1e6:.1f} MB")
     else:
         print("\n5. GPU not available (skipping GPU test)")
 
     print("\n" + "="*70)
-    print("✅ MODEL TEST COMPLETE")
+    print("[OK] MODEL TEST COMPLETE")
     print("="*70)
 
     return model
